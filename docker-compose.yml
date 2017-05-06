@@ -1,0 +1,9 @@
+version: '2'
+services:
+  dataserver:
+    build: .
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "<YourStrong!Passw0rd>"
+    ports:
+      - "1433:1433"
