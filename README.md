@@ -1,4 +1,4 @@
-* Run MsSQLServer on OSX
+Run MsSQLServer on OSX
 
 This Docker Compose configuration allows OSX users to run a microsoft database server in a docker instance.
 
