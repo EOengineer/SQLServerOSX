@@ -1,4 +1,14 @@
 #!/bin/bash
 ln -sfn /opt/mssql-tools/bin/sqlcmd /usr/bin/sqlcmd
 
-sqlcmd -H "localhost" -U "SA" -P "<YourStrong!Passw0rd>" -Q "RESTORE DATABASE [exampledb] FROM  DISK = N'var/backups/exampledb.bak' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 5"
+
+
+# start the mssql server
+/opt/mssql/bin/sqlservr.sh
+
+
+# let the server come up
+sleep 20s && /bin/data-setup.sh
+
+
+

@@ -10,4 +10,5 @@ services:
     volumes:
         - ./exampledb.bak:/var/backups/exampledb.bak
         - ./entrypoint.sh:/bin/entrypoint.sh
+        - ./data-setup.sh:/bin/data-setup.sh
     command: bash -c "chmod +x /bin/entrypoint.sh && /bin/entrypoint.sh"
