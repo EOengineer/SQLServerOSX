@@ -8,7 +8,7 @@ services:
     ports:
       - "1433:1433"
     volumes:
-        - ./exampledb.bak:/var/backups/exampledb.bak
+        - ./Horizon.bak:/var/opt/mssql/data/Horizon.bak
         - ./entrypoint.sh:/bin/entrypoint.sh
         - ./data-setup.sh:/bin/data-setup.sh
     command: bash -c "chmod +x /bin/entrypoint.sh && /bin/entrypoint.sh"
