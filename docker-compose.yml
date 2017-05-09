@@ -8,7 +8,8 @@ services:
     ports:
       - "1433:1433"
     volumes:
-        - ./Horizon.bak:/var/opt/mssql/data/Horizon.bak
-        - ./entrypoint.sh:/bin/entrypoint.sh
-        - ./data-setup.sh:/bin/data-setup.sh
-    command: bash -c "chmod +x /bin/entrypoint.sh && /bin/entrypoint.sh"
+      - ./Horizon.bak:/var/opt/mssql/data/Horizon.bak
+      - ./kimbo_caterease.bak:/var/opt/mssql/data/kimbo_caterease.bak
+      - ./entrypoint.sh:/bin/entrypoint.sh
+      - ./data-setup.sh:/bin/data-setup.sh
+    command: bin/data-setup.sh
